@@ -17,7 +17,7 @@ After=network-online.target
 [Service]
 Restart=on-failure
 Environment=CONSUL_ALLOW_PRIVILEGED_PORTS=true
-ExecStart=/usr/bin/docker run -dit -e PG_TITLE=${NAME} -e COLOR=${BG_COLOR} -p 8080:8080 docker.pkg.github.com/mm-k8s-ug/k8smm-weblab/k8smm-weblab:latest
+ExecStart=/usr/bin/docker run -dit -e PG_TITLE=${NAME} -e COLOR=${BG_COLOR} -p 8080:8080 quay.io/dther/k8smm-weblab
 ExecReload=/bin/kill -HUP $MAINPID
 KillSignal=SIGTERM
 User=root
